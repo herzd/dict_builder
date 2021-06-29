@@ -105,7 +105,9 @@ def check_query_time(DICT):
 
     
 def check_file_size(FILE):
+    START_TIME = time.time()
     print("Filesize of {} {} MB".format(OUTFILE,os.path.getsize(FILE)/(1024**2)))
+    print("{} seconds for checking filesize".format(time.time() - START_TIME))
 
     
 # run program
@@ -116,6 +118,7 @@ MATRIX_LIST_DICT = create_matrix_list_dict(KEYLIST, MATRIXCOUNT, XMATRIX, YMATRI
 save_to_json(MATRIX_LIST_DICT,OUTFILE)
 check_query_time(MATRIX_LIST_DICT)
 NULLSPACE_DICT = create_nullspace_dict(KEYLIST, MATRIX_LIST_DICT)
+del KEYLIST
 del MATRIX_LIST_DICT
 save_to_json(NULLSPACE_DICT,OUTFILE_NULLDICT)
 check_query_time(NULLSPACE_DICT)
@@ -123,18 +126,23 @@ del NULLSPACE_DICT
 check_file_size(OUTFILE)
 check_file_size(OUTFILE_NULLDICT)
 print("Total program runtime: {} seconds.".format(time.time() - TOTAL_START_TIME))
+del TOTAL_START_TIME
    #+end_src
 
    #+RESULTS: matrix-dict-creator-lists-json-nullspace
-   : 0.00034046173095703125 seconds for creating dict of matrix lists
-   : 0.010339975357055664 seconds for saving dict to json
-   : 1.2159347534179688e-05 seconds for random key query
-   : 0.03429579734802246 seconds for creating dict of nullspace vectors
-   : 0.005727291107177734 seconds for saving dict to json
-   : 7.3909759521484375e-06 seconds for random key query
-   : Filesize of ../matrix_dict_lists.json 0.035279273986816406 MB
-   : Filesize of ../matrix_dict_lists.json 0.021460533142089844 MB
-   : Total program runtime: 0.05086922645568848 seconds.
+   #+begin_example
+   0.0003409385681152344 seconds for creating dict of matrix lists
+   0.010239124298095703 seconds for saving dict to json
+   1.0013580322265625e-05 seconds for random key query
+   0.03446555137634277 seconds for creating dict of nullspace vectors
+   0.005627870559692383 seconds for saving dict to json
+   6.4373016357421875e-06 seconds for random key query
+   Filesize of ../matrix_dict_lists.json 0.035279273986816406 MB
+   1.3828277587890625e-05 seconds for checking filesize
+   Filesize of ../matrix_dict_lists.json 0.021460533142089844 MB
+   4.0531158447265625e-06 seconds for checking filesize
+   Total program runtime: 0.05087471008300781 seconds.
+   #+end_example
 
 
 * Footnotes
