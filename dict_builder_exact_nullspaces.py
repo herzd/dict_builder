@@ -118,9 +118,3 @@ check_file_size(OUTFILE)
 check_file_size(OUTFILE_NULLDICT)
 print("Total program runtime: {} seconds.".format(time.time() - TOTAL_START_TIME))
 
-
-# In[ ]:
-
-
-
-
