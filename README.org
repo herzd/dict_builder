@@ -9,7 +9,7 @@
 *** sympy approach 
     All dict items are plain python. Rational Numbers are represented as tuples of integers for storagein json files. Sympy is used for the nullspace calculation.
    #+NAME: matrix-dict-creator-lists-json-nullspace
-   #+HEADER: :var OUTPUT="../matrix_dict_lists.json" :var KEYLEN=5 :var NKEYS=3 :var NMATRIX=2 :var MATRIXX=5 :var MATRIXY=6 :var NULLDICT="../matrix_dict_lists_nullspaces.json"
+   #+HEADER: :var OUTPUT="../matrix_dict_lists.json" :var KEYLEN=5 :var NKEYS=3 :var NMATRIX=10 :var MATRIXX=10 :var MATRIXY=15 :var NULLDICT="../matrix_dict_lists_nullspaces.json"
    #+begin_src python :results output :exports both :tangle "./matrix_dict_creator_lists_json_nullspace.py"
 import json
 import os
@@ -126,15 +126,15 @@ print("Total program runtime: {} seconds.".format(time.time() - TOTAL_START_TIME
    #+end_src
 
    #+RESULTS: matrix-dict-creator-lists-json-nullspace
-   : 2.0742416381835938e-05 seconds for creating dict of matrix lists
-   : 0.012201786041259766 seconds for saving dict to json
-   : 1.1682510375976562e-05 seconds for random key query
-   : 0.0024542808532714844 seconds for creating dict of nullspace vectors
-   : 0.012558460235595703 seconds for saving dict to json
-   : 1.0728836059570312e-05 seconds for random key query
-   : Filesize of ../matrix_dict_lists.json 0.0014848709106445312 MB
-   : Filesize of ../matrix_dict_lists.json 0.0010271072387695312 MB
-   : Total program runtime: 0.027359485626220703 seconds.
+   : 0.00034046173095703125 seconds for creating dict of matrix lists
+   : 0.010339975357055664 seconds for saving dict to json
+   : 1.2159347534179688e-05 seconds for random key query
+   : 0.03429579734802246 seconds for creating dict of nullspace vectors
+   : 0.005727291107177734 seconds for saving dict to json
+   : 7.3909759521484375e-06 seconds for random key query
+   : Filesize of ../matrix_dict_lists.json 0.035279273986816406 MB
+   : Filesize of ../matrix_dict_lists.json 0.021460533142089844 MB
+   : Total program runtime: 0.05086922645568848 seconds.
 
 
 * Footnotes
