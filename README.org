@@ -131,17 +131,17 @@ del TOTAL_START_TIME
 
    #+RESULTS: matrix-dict-creator-lists-json-nullspace
    #+begin_example
-   0.0003409385681152344 seconds for creating dict of matrix lists
-   0.010239124298095703 seconds for saving dict to json
-   1.0013580322265625e-05 seconds for random key query
-   0.03446555137634277 seconds for creating dict of nullspace vectors
-   0.005627870559692383 seconds for saving dict to json
-   6.4373016357421875e-06 seconds for random key query
+   0.00034880638122558594 seconds for creating dict of matrix lists
+   0.010995626449584961 seconds for saving dict to json
+   1.0728836059570312e-05 seconds for random key query
+   0.0341949462890625 seconds for creating dict of nullspace vectors
+   0.0056307315826416016 seconds for saving dict to json
+   5.7220458984375e-06 seconds for random key query
    Filesize of ../matrix_dict_lists.json 0.035279273986816406 MB
-   1.3828277587890625e-05 seconds for checking filesize
+   1.1444091796875e-05 seconds for checking filesize
    Filesize of ../matrix_dict_lists.json 0.021460533142089844 MB
-   4.0531158447265625e-06 seconds for checking filesize
-   Total program runtime: 0.05087471008300781 seconds.
+   3.5762786865234375e-06 seconds for checking filesize
+   Total program runtime: 0.051332950592041016 seconds.
    #+end_example
 
 

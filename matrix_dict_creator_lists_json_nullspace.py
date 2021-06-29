@@ -1,9 +1,9 @@
 OUTPUT="../matrix_dict_lists.json"
 KEYLEN=5
 NKEYS=3
-NMATRIX=2
-MATRIXX=5
-MATRIXY=6
+NMATRIX=10
+MATRIXX=10
+MATRIXY=15
 NULLDICT="../matrix_dict_lists_nullspaces.json"
 import json
 import os
@@ -99,7 +99,9 @@ def check_query_time(DICT):
 
     
 def check_file_size(FILE):
+    START_TIME = time.time()
     print("Filesize of {} {} MB".format(OUTFILE,os.path.getsize(FILE)/(1024**2)))
+    print("{} seconds for checking filesize".format(time.time() - START_TIME))
 
     
 # run program
@@ -110,6 +112,7 @@ MATRIX_LIST_DICT = create_matrix_list_dict(KEYLIST, MATRIXCOUNT, XMATRIX, YMATRI
 save_to_json(MATRIX_LIST_DICT,OUTFILE)
 check_query_time(MATRIX_LIST_DICT)
 NULLSPACE_DICT = create_nullspace_dict(KEYLIST, MATRIX_LIST_DICT)
+del KEYLIST
 del MATRIX_LIST_DICT
 save_to_json(NULLSPACE_DICT,OUTFILE_NULLDICT)
 check_query_time(NULLSPACE_DICT)
@@ -117,3 +120,4 @@ del NULLSPACE_DICT
 check_file_size(OUTFILE)
 check_file_size(OUTFILE_NULLDICT)
 print("Total program runtime: {} seconds.".format(time.time() - TOTAL_START_TIME))
+del TOTAL_START_TIME
